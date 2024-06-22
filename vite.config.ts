@@ -12,15 +12,16 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: ` // just variables loaded globally
-          @import "./src/assets/scss/font";
-          @import "./src/assets/scss/variables";
-        `
-      }
-    }
   }
+  /* For Using Scss Variables in .vue Files*/
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: {
+  //       additionalData: ` // just variables loaded globally
+  //         @import "./src/assets/scss/font";
+  //         @import "./src/assets/scss/variables";
+  //       `
+  //     }
+  //   }
+  // }
 })

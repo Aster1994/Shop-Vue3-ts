@@ -4,9 +4,9 @@ import HomeHeader from '@/components/Home/HomeHeader.vue'
 </script>
 
 <template>
-  <HomeHeader />
+  <HomeHeader class="fixed top-0 right-0 left-0 w-full h-main-header-height" />
 
-  <RouterView />
+  <RouterView class="main--wrapper mt-main-header-height" />
 </template>
 
 <style lang="scss" scoped></style>

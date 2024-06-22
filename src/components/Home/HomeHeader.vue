@@ -4,8 +4,8 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="header__wrapper flex justify-between items-center">
+  <header class="flex items-center w-full">
+    <div class="header__wrapper w-full flex justify-between items-center px-6">
       <Logo class="header__logo" />
 
       <div class="flex items-center">

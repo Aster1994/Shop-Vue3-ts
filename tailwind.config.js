@@ -3,7 +3,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 import daisyui from 'daisyui'
 import daisyui0 from 'daisyui/src/theming/themes'
-import colors from './src/assets/colors.js'
+import { colors, sizes } from './src/assets/variables.js'
 
 export default {
   content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -11,6 +11,11 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans]
+      },
+      spacing: {
+        'logo-width': sizes['logo-width'],
+        'logo-height': sizes['logo-height'],
+        'main-header-height': sizes['main-header-height']
       }
     }
   },
