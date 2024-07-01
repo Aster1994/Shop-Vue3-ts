@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Logo from '@/components/Logo.vue'
+import Logo from '@/components/Global/Logo.vue'
 import { RouterLink } from 'vue-router'
 </script>
 

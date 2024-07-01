@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import HomeHeader from '@/components/Home/HomeHeader.vue'
+import MainHeader from '@/components/Global/MainHeader.vue'
 </script>
 
 <template>
-  <HomeHeader class="md:fixed md:top-0 md:right-0 md:left-0 w-full md:h-main-header-height" />
+  <MainHeader class="md:fixed md:top-0 md:right-0 md:left-0 w-full md:h-main-header-height" />
 
   <RouterView class="main--wrapper md:mt-main-header-height" />
 </template>
