@@ -6,25 +6,6 @@ import { RouterLink } from 'vue-router'
 <template>
   <header class="flex items-center w-full px-3 md:px-6">
     <div class="header__wrapper w-full flex flex-col md:flex-row justify-between items-center">
-      <Logo class="header__logo" />
-
-      <label class="d-input d-input-bordered flex items-center gap-2 mt-3 md:mt-0">
-        <input class="grow" placeholder="Search" type="text" />
-        <svg
-          class="size-5 opacity-70"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </label>
       <div class="flex items-center mt-3 md:mt-0">
         <nav class="header__nav">
           <RouterLink class="mx-1 md:mx-3 text-sm" to="/"> خانه</RouterLink>
@@ -53,6 +34,27 @@ import { RouterLink } from 'vue-router'
           ورود
         </button>
       </div>
+
+      <label
+        class="d-input d-input-bordered d-input-secondary flex items-center gap-2 mt-3 md:mt-0"
+      >
+        <input class="d-grow" placeholder="اینجا بگرد ..." type="text" />
+        <svg
+          class="size-5 opacity-70 text-secondary"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </label>
+      <Logo class="header__logo" />
     </div>
   </header>
 </template>
