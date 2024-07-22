@@ -44,7 +44,8 @@ const variables = {
   sizes: {
     'logo-width': '75px',
     'logo-height': '75px',
-    'main-header-height': '123px'
+    'main-header-height': '123px',
+    'layout-max-width': '1536px' // it's also 2xl breakpoint
   }
 }
 export default variables

@@ -4,9 +4,8 @@
 @import 'font/index';
 
 #app {
-  max-width: 1280px;
+  max-width: $layout-max-width;
   margin: 0 auto;
-  padding: 2rem;
   font-weight: normal;
 }
 

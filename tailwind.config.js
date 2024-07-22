@@ -15,7 +15,8 @@ export default {
       spacing: {
         'logo-width': sizes['logo-width'],
         'logo-height': sizes['logo-height'],
-        'main-header-height': sizes['main-header-height']
+        'main-header-height': sizes['main-header-height'],
+        'layout-max-width': sizes['layout-max-width']
       }
     }
   },
