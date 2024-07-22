@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
       :width="props.width"
       alt="Vue logo"
       class="logo"
-      src="../../assets/logo-typo.png"
+      src="@/assets/logo-typo.png"
     />
     <img
       v-else
@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
       :width="props.width"
       alt="Vue logo"
       class="logo"
-      src="../../assets/logo.png"
+      src="@/assets/logo.png"
     />
   </div>
 </template>
