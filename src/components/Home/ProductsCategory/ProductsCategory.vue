@@ -1,8 +1,13 @@
 <template>
-  <div class="category__products p-4 flex gap-4 justify-evenly items-center w-full bg-secondary">
+  <div
+    class="category__products p-4 flex gap-4 flex-wrap justify-evenly items-center w-full bg-secondary"
+  >
+    <Loading v-if="loading" />
+
     <ProductCategoryCard
       v-for="category in productCategories"
       :key="category.slug"
+      ref="itemRefs"
       :category="category"
       class="max-w-20"
     />
@@ -10,12 +15,15 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, type Ref } from 'vue'
+import Loading from '@/components/Global/Loading.vue'
 import ProductCategoryCard from '@/components/Home/ProductsCategory/ProductCategory.vue'
+import { onMounted, ref, type Ref } from 'vue'
 import type ProductCategory from '@/types/ProductCategory'
 import { useMyFetch } from '@/config'
 
 let productCategories: Ref<ProductCategory[]> = ref([])
+const itemRefs = ref([])
+
 let loading: Ref<boolean> = ref(false)
 
 async function getCategories(): Promise<any> {
@@ -25,11 +33,11 @@ async function getCategories(): Promise<any> {
     if (data.value) {
       data.value.splice(7)
       productCategories.value = data.value.map((item: object) => {
-        return { ...item, image: 'src/assets/category-test.png' }
+        return { ...item, image: 'src/assets/images/category-test.png' }
       })
     }
-  } catch (error) {
     loading.value = false
+  } catch (error) {
     console.log('The Error is: ', error)
   }
 }
