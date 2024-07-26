@@ -12,6 +12,12 @@ export const productStore = defineStore('productStore', () => {
     arr.splice(4)
     return arr
   })
+  const mostWantedProducts = computed(() => {
+    // products are Proxy Array
+    const arr = JSON.parse(JSON.stringify(products.value))
+    arr.splice(0, 26)
+    return arr
+  })
 
   async function getProducts(): Promise<any> {
     try {
@@ -26,7 +32,7 @@ export const productStore = defineStore('productStore', () => {
     }
   }
 
-  return { products, productsLoading, getProducts, newestProducts }
+  return { products, productsLoading, getProducts, newestProducts, mostWantedProducts }
 })
 // export const productStore = defineStore('productStore', {
 //   state: () => ({ products: Array<Product>, productsLoading: false }),
