@@ -3,7 +3,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 import daisyui from 'daisyui'
 import daisyui0 from 'daisyui/src/theming/themes'
-import { colors, sizes } from './src/assets/variables.js'
+import { colors, sizes } from './src/assets/config/variables.ts'
 
 export default {
   content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],

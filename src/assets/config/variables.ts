@@ -1,4 +1,4 @@
-const variables = {
+const variables: object = {
   colors: {
     light: {
       secondary: '#999b84',
