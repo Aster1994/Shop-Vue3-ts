@@ -17,41 +17,39 @@ const itemRefs = ref([])
 </script>
 
 <template>
-  <main class="w-full">
-    <ProductsCategory class="mt-6 2xl:rounded-2xl" />
+  <ProductsCategory class="mt-6 2xl:rounded-2xl" />
 
-    <TitleCard class="mt-6 px-8" title="جدید ترین ها" />
-    <section class="mt-6 px-8 w-full flex flex-col items-center">
-      <Loading v-if="productsLoading" />
+  <TitleCard class="mt-6 px-8" title="جدید ترین ها" />
+  <section class="mt-6 px-8 w-full flex flex-col items-center">
+    <Loading v-if="productsLoading" />
 
-      <div
-        class="new-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 items-center"
-      >
-        <ProductCard
-          v-for="product in newestProducts"
-          :key="product.id"
-          ref="itemRefs"
-          :product="product"
-          class=""
-        />
-      </div>
-    </section>
-    <TitleCard class="mt-6 px-8" title="پرفروش ترین ها" />
-    <section class="mt-6 px-8 w-full flex flex-col items-center">
-      <Loading v-if="productsLoading" />
+    <div
+      class="new-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 items-center"
+    >
+      <ProductCard
+        v-for="product in newestProducts"
+        :key="product.id"
+        ref="itemRefs"
+        :product="product"
+        class=""
+      />
+    </div>
+  </section>
+  <TitleCard class="mt-6 px-8" title="پرفروش ترین ها" />
+  <section class="mt-6 px-8 w-full flex flex-col items-center">
+    <Loading v-if="productsLoading" />
 
-      <div
-        class="new-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 items-center"
-      >
-        <ProductCard
-          v-for="product in mostWantedProducts"
-          :key="product.id"
-          ref="itemRefs"
-          :product="product"
-          class=""
-        />
-      </div>
-    </section>
-  </main>
+    <div
+      class="new-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 items-center"
+    >
+      <ProductCard
+        v-for="product in mostWantedProducts"
+        :key="product.id"
+        ref="itemRefs"
+        :product="product"
+        class=""
+      />
+    </div>
+  </section>
 </template>
 <style lang="scss" scoped></style>

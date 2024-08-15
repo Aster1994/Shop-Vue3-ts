@@ -1,14 +1,20 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import MainHeader from '@/components/Global/MainHeader.vue'
+import layouts from '@/layouts/layouts'
+import router from '@/router'
+import { type ShallowRef, shallowRef } from 'vue'
+
+let layout: ShallowRef<string> = shallowRef('div')
+router.afterEach((to) => {
+  layout.value = layouts[to.meta.layout] || 'div'
+})
+// provide('app:layout', layout)
 </script>
 
 <template>
-  <MainHeader
-    class="md:fixed md:top-0 md:right-0 md:left-0 w-full md:h-main-header-height mx-auto max-w-layout-max-width"
-  />
-
-  <RouterView class="main--wrapper md:pt-main-header-height" />
+  <component :is="layout">
+    <RouterView class="main--wrapper" />
+  </component>
 </template>
 
 <style lang="scss" scoped></style>
