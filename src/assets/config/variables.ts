@@ -1,4 +1,9 @@
-const variables: object = {
+interface Variables {
+  colors: { light: { [key: string]: string }; dark: { [key: string]: string } }
+  sizes: { [key: string]: string }
+}
+
+const variables: Variables = {
   colors: {
     light: {
       secondary: '#999b84',
