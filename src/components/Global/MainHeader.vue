@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import Logo from '@/components/Global/Logo.vue'
 import { RouterLink } from 'vue-router'
+import { storeToRefs } from 'pinia'
+import { userStore } from '@/stores/user'
+
+const { user } = storeToRefs(userStore())
 </script>
 
 <template>
-  <header class="flex items-center w-full px-3 md:px-6">
+  <header class="flex items-center w-full px-3 md:px-6 bg-base-100">
     <div class="header__wrapper w-full flex flex-col md:flex-row justify-between items-center">
       <RouterLink to="/">
         <Logo class="header__logo" />
@@ -12,7 +16,7 @@ import { RouterLink } from 'vue-router'
 
       <label class="d-input flex items-center gap-2 mt-3 md:mt-0 w-full md:w-1/2">
         <svg
-          class="size-6 opacity-70 rotate-90"
+          class="search-icon size-6 opacity-70 rotate-90"
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
@@ -32,7 +36,7 @@ import { RouterLink } from 'vue-router'
       <div class="flex items-center mt-3 md:mt-0">
         <RouterLink class="d-btn d-btn-circle d-btn-lg mx-1 md:mx-3" role="button" to="/">
           <svg
-            class="size-8"
+            class="basket-icon size-8"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"
@@ -46,9 +50,20 @@ import { RouterLink } from 'vue-router'
             />
           </svg>
         </RouterLink>
-        <RouterLink class="d-btn d-btn-circle d-btn-lg mx-1 md:mx-3" role="button" to="/">
+        <RouterLink
+          :to="user.id ? `user/${user.id}` : '/login'"
+          class="d-btn d-btn-circle d-btn-lg mx-1 md:mx-3"
+          role="button"
+        >
+          <img
+            v-if="user.image"
+            :alt="user.username"
+            :src="user.image"
+            class="rounded-full w-full h-full"
+          />
           <svg
-            class="size-8"
+            v-else
+            class="user-icon size-8"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"

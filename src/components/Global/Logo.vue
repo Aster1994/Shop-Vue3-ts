@@ -2,8 +2,8 @@
 import variables from '@/assets/config/variables'
 
 export interface Props {
-  width?: number
-  height?: number
+  width?: number | string
+  height?: number | string
   typo?: boolean
 }
 
@@ -18,10 +18,10 @@ const props = withDefaults(defineProps<Props>(), {
   <div class="logo">
     <img
       v-if="typo"
-      :height="auto"
       :width="props.width"
       alt="Vue logo"
       class="logo"
+      height="auto"
       src="../../assets/images/logo/logo-typo.png"
     />
     <img
