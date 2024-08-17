@@ -25,6 +25,15 @@ const router = createRouter({
       }
     },
     {
+      path: '/search',
+      name: 'search',
+      component: () => import('../views/SearchView.vue'),
+      meta: {
+        layout: 'defaultLayout',
+        requiresAuth: false
+      }
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

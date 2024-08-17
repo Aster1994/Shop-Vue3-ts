@@ -1,10 +1,30 @@
 <script lang="ts" setup>
 import Logo from '@/components/Global/Logo.vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { userStore } from '@/stores/user'
+import { onMounted, type Ref, ref, watch } from 'vue'
 
+import router from '@/router'
+
+const route = useRoute()
+// const routeQuery: unknown = route.query.query
 const { user } = storeToRefs(userStore())
+const query: Ref<string> | Ref<null> = ref('')
+
+function onInputQuery(): void {
+  if (query.value) router.push({ path: '/search', query: { query: query.value } })
+  else router.push('/')
+}
+
+watch(route, (newValue) => {
+  if (newValue.query.query) query.value = newValue.query.query
+  else query.value = ''
+})
+onMounted(() => {
+  if (route.query.query) query.value = route.query.query
+  else query.value = ''
+})
 </script>
 
 <template>
@@ -30,7 +50,7 @@ const { user } = storeToRefs(userStore())
           />
         </svg>
         <span class="opacity-80 md:text-lg whitespace-nowrap"> اینجا بگرد </span>
-        <input class="" placeholder=" ..." type="text" />
+        <input v-model.trim="query" placeholder=" ..." type="text" @input="onInputQuery" />
       </label>
 
       <div class="flex items-center mt-3 md:mt-0">
