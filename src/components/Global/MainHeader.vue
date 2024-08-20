@@ -28,7 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="flex items-center w-full px-3 md:px-6 bg-base-100">
+  <header class="flex items-center w-full px-3 md:px-16 bg-base-100">
     <div class="header__wrapper w-full flex flex-col md:flex-row justify-between items-center">
       <RouterLink to="/">
         <Logo class="header__logo" />

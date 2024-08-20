@@ -1,16 +1,18 @@
 <template>
-  <div
-    class="category__products p-4 flex gap-4 flex-wrap justify-evenly items-center w-full bg-secondary"
-  >
-    <Loading v-if="loading" />
+  <div class="category__products">
+    <div
+      class="p-4 2xl:rounded-2xl flex gap-4 flex-wrap justify-evenly items-center w-full bg-secondary"
+    >
+      <Loading v-if="loading" />
 
-    <ProductCategoryCard
-      v-for="category in productCategories"
-      :key="category.slug"
-      ref="itemRefs"
-      :category="category"
-      class="max-w-20"
-    />
+      <ProductCategoryCard
+        v-for="category in productCategories"
+        :key="category.slug"
+        ref="itemRefs"
+        :category="category"
+        class="max-w-20"
+      />
+    </div>
   </div>
 </template>
 
@@ -33,7 +35,7 @@ async function getCategories(): Promise<any> {
     if (data.value) {
       data.value.splice(7)
       productCategories.value = data.value.map((item: object) => {
-        return { ...item, image: 'src/assets/images/category-test.png' }
+        return { ...item, image: 'src/assets/images/test.png' }
       })
     }
     loading.value = false
