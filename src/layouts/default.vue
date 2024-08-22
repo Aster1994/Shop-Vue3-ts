@@ -5,11 +5,14 @@
   <main class="w-full md:pt-main-header-height">
     <slot />
   </main>
+
+  <Footer class="mt-16" />
 </template>
 
 <script lang="ts" setup>
 import MainHeader from '@/components/Global/MainHeader.vue'
 import setInitial from '@/config/setInitial'
+import Footer from '@/components/Global/Footer/Footer.vue'
 
 setInitial()
 </script>

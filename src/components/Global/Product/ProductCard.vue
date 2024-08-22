@@ -10,20 +10,7 @@
           {{ product.price }} {{ currency }}
         </span>
       </div>
-      <svg
-        class="size-6 opacity"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <font-awesome-icon class="size-5 opacity-60" icon="fa-solid fa-arrow-left-long" />
     </div>
   </RouterLink>
 </template>

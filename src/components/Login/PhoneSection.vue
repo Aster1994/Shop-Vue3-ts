@@ -16,20 +16,10 @@ function onSetPhone() {
     برای ادامه خرید یا ثبت‌نام در سایت لطفا شماره تماس خود را وارد نمایید
   </p>
   <label class="mt-8 w-full md:w-1/2 d-input-secondary d-input flex items-center gap-2">
-    <svg
-      class="phone-icon size-6 opacity-70"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.5"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
+    <font-awesome-icon
+      class="phone-icon size-6 opacity-50"
+      icon="fa-solid fa-mobile-screen-button"
+    />
     <span class="opacity-80 text-md whitespace-nowrap">شماره همراه</span>
     <input
       v-model="phoneForm"
