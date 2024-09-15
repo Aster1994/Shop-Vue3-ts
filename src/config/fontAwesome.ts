@@ -3,6 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { faInstagram, faTelegram } from '@fortawesome/free-brands-svg-icons'
 import {
+  faAngleLeft,
   faArrowLeftLong,
   faCartShopping,
   faHeadset,
@@ -24,7 +25,8 @@ library.add(
   faMobileScreenButton,
   faArrowLeftLong,
   faUserTie,
-  faCartShopping
+  faCartShopping,
+  faAngleLeft
 )
 
 export default library
