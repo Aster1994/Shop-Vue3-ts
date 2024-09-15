@@ -1,12 +1,17 @@
 <template>
-  <div class="category__product w-full cursor-pointer">
+  <RouterLink
+    :to="`category/${props.category.name}`"
+    class="category__product w-full cursor-pointer"
+  >
     <img :alt="props.category.name" :src="props.category.image" class="w-full h-auto rounded-2xl" />
-  </div>
+  </RouterLink>
 </template>
 
 <script lang="ts" setup>
+import type ProductCategory from '@/types/ProductCategory'
+
 const props = defineProps<{
-  category: object
+  category: ProductCategory
 }>()
 </script>
 

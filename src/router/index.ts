@@ -34,6 +34,15 @@ const router = createRouter({
       }
     },
     {
+      path: '/category/:name',
+      name: 'category',
+      component: () => import('../views/CategoryProductsView.vue'),
+      meta: {
+        layout: 'defaultLayout',
+        requiresAuth: false
+      }
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

@@ -2,7 +2,7 @@
   <MainHeader
     class="z-[1] md:fixed md:top-0 md:right-0 md:left-0 w-full md:h-main-header-height mx-auto max-w-layout-max-width"
   />
-  <main class="w-full md:pt-main-header-height">
+  <main class="w-full md:pt-main-header-height min-h-[60vh]">
     <slot />
   </main>
 
