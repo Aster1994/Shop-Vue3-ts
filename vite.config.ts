@@ -20,6 +20,7 @@ export default defineConfig({
         additionalData: ` // just variables loaded globally
           @import "./src/assets/scss/font";
           @import "./src/assets/scss/variables";
+          @import "./src/assets/scss/utilities";
         `
       }
     }
