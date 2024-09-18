@@ -8,6 +8,17 @@
   font-weight: normal;
 }
 
+#app {
+  max-width: $layout-max-width;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
 body {
   //color: $color-light-black-700;
   //background-color: $color-light-primary;

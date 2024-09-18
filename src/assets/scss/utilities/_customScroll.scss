@@ -1,0 +1,33 @@
+* {
+  scrollbar-color: $color-light-secondary transparent !important;
+  scrollbar-width: thin;
+}
+
+.custom-scroll-y {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: $color-light-secondary transparent !important;
+  scrollbar-width: thin;
+}
+
+.custom-scroll-x {
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: $color-light-secondary transparent !important;
+  scrollbar-width: thin;
+}
+
+.custom-scroll-y::-webkit-scrollbar,
+.custom-scroll-x::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  border-radius: 9999px;
+}
+
+.custom-scroll-y::-webkit-scrollbar-thumb,
+.custom-scroll-x::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background: $color-light-secondary;
+  border-radius: 9999px;
+}
