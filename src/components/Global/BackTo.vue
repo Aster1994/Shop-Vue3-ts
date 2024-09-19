@@ -1,8 +1,13 @@
 <script lang="ts" setup>
 import router from '@/router'
 
+const emits = defineEmits<{
+  (e: 'back'): void
+}>()
+
 function onReturn() {
   router.back()
+  emits('back')
 }
 </script>
 
@@ -17,7 +22,9 @@ function onReturn() {
   &:after {
     content: '';
     position: absolute;
-    bottom: 0.85rem;
+    bottom: 0;
+    top: 0;
+    margin: auto 0;
     left: 1rem;
     width: 3rem;
     height: 0.7rem;
