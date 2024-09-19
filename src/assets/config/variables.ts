@@ -1,56 +1,68 @@
-interface Variables {
-  colors: { light: { [key: string]: string }; dark: { [key: string]: string } }
-  sizes: { [key: string]: string }
+import type { ObjectType } from '@/types/Product'
+
+interface Colors {
+  light: ObjectType<string>
+  dark: ObjectType<string>
 }
 
-const variables: Variables = {
-  colors: {
-    light: {
-      secondary: '#999b84',
-      secondaryContent: '#ffffff',
-      'white-800': '#ffffff',
-      'white-700': '#eeeeee',
-      'white-600': '#dddddd',
-      'white-500': '#cccccc',
-      'white-400': '#bbbbbb',
-      'white-300': '#aaaaaa',
-      'white-200': '#999999',
-      'white-100': '#888888',
-      'black-100': '#777777',
-      'black-200': '#666666',
-      'black-300': '#555555',
-      'black-400': '#444444',
-      'black-500': '#333333',
-      'black-600': '#222222',
-      'black-700': '#111111',
-      'black-800': '#000000'
-    },
-    dark: {
-      secondary: '#999b84',
-      secondaryContent: '#ffffff',
-      'white-800': '#ffffff',
-      'white-700': '#eeeeee',
-      'white-600': '#dddddd',
-      'white-500': '#cccccc',
-      'white-400': '#bbbbbb',
-      'white-300': '#aaaaaa',
-      'white-200': '#999999',
-      'white-100': '#888888',
-      'black-100': '#777777',
-      'black-200': '#666666',
-      'black-300': '#555555',
-      'black-400': '#444444',
-      'black-500': '#333333',
-      'black-600': '#222222',
-      'black-700': '#111111',
-      'black-800': '#000000'
-    }
+type Sizes = ObjectType<string>
+
+type Breakpoints = ObjectType<any>
+
+export const colors: Colors = {
+  light: {
+    secondary: '#999b84',
+    secondaryContent: '#ffffff',
+    'white-800': '#ffffff',
+    'white-700': '#eeeeee',
+    'white-600': '#dddddd',
+    'white-500': '#cccccc',
+    'white-400': '#bbbbbb',
+    'white-300': '#aaaaaa',
+    'white-200': '#999999',
+    'white-100': '#888888',
+    'black-100': '#777777',
+    'black-200': '#666666',
+    'black-300': '#555555',
+    'black-400': '#444444',
+    'black-500': '#333333',
+    'black-600': '#222222',
+    'black-700': '#111111',
+    'black-800': '#000000'
   },
-  sizes: {
-    'logo-width': '75px',
-    'logo-height': '75px',
-    'main-header-height': '123px',
-    'layout-max-width': '1536px' // it's also 2xl breakpoint
+  dark: {
+    secondary: '#999b84',
+    secondaryContent: '#ffffff',
+    'white-800': '#ffffff',
+    'white-700': '#eeeeee',
+    'white-600': '#dddddd',
+    'white-500': '#cccccc',
+    'white-400': '#bbbbbb',
+    'white-300': '#aaaaaa',
+    'white-200': '#999999',
+    'white-100': '#888888',
+    'black-100': '#777777',
+    'black-200': '#666666',
+    'black-300': '#555555',
+    'black-400': '#444444',
+    'black-500': '#333333',
+    'black-600': '#222222',
+    'black-700': '#111111',
+    'black-800': '#000000'
   }
 }
-export default variables
+
+export const sizes: Sizes = {
+  'logo-width': '75px',
+  'logo-height': '75px',
+  'main-header-height': '123px',
+  'layout-max-width': '1536px' // it's also 2xl breakpoint
+}
+
+export const breakpoints: Breakpoints = {
+  isSm: () => window.innerWidth > 640,
+  isMd: () => window.innerWidth > 768,
+  isLg: () => window.innerWidth > 1024,
+  isXl: () => window.innerWidth > 1280,
+  is2Xl: () => window.innerWidth > 1536
+}

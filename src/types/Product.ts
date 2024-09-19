@@ -1,3 +1,7 @@
+export interface ObjectType<T> {
+  [key: string]: T
+}
+
 export default interface Product {
   id: number | string
   category: string

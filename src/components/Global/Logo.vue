@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import variables from '@/assets/config/variables'
+import { sizes } from '@/assets/config/variables'
 
 export interface Props {
   width?: number | string
@@ -8,8 +8,8 @@ export interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  width: variables.sizes['logo-width'],
-  height: variables.sizes['logo-height'],
+  width: sizes['logo-width'],
+  height: sizes['logo-height'],
   typo: false
 })
 </script>
