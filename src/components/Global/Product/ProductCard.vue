@@ -1,6 +1,8 @@
 <template>
   <RouterLink :to="`/product/${product.title}`" class="product--card rounded-2xl h-full">
-    <img :alt="product.title" :src="product.images[0]" class="product--card__image rounded-2xl" />
+    <div class="product--card__image relative rounded-2xl bg-base-200 bg-opacity-80 z-0">
+      <img :alt="product.title" :src="product.images[0]" class="rounded-2xl object-cover z-[1]" />
+    </div>
     <div class="px-1 py-4 flex items-center justify-between">
       <div>
         <h2 class="product--card__title text-lg font-semibold ml-2">
@@ -28,6 +30,17 @@ const product = reactive(props.product)
 
 <style lang="scss" scoped>
 .product--card__image {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  height: 0;
+  padding-top: 133.3%; // aspect-ratio : 3/4
+
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

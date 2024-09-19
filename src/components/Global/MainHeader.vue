@@ -36,11 +36,12 @@ onMounted(() => {
 
       <label class="d-input flex items-center gap-2 mt-3 md:mt-0 w-full md:w-1/2">
         <font-awesome-icon
-          class="password-icon size-6 opacity-50 rotate-90"
+          class="password-icon size-6 opacity-50 rotate-90 hover:text-accent hover:opacity-100"
           icon="fa-solid fa-magnifying-glass"
+          @click="onInputQuery"
         />
         <span class="opacity-80 md:text-lg whitespace-nowrap"> اینجا بگرد </span>
-        <input v-model.trim="query" placeholder=" ..." type="text" @input="onInputQuery" />
+        <input v-model.trim="query" placeholder=" ..." type="text" @keyup.enter="onInputQuery" />
       </label>
 
       <div class="flex items-center mt-3 md:mt-0">
