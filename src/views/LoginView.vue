@@ -62,7 +62,7 @@ async function onLogin(): Promise<any> {
     if (response.value && response.value.ok) {
       userForm.value = data.value
       await setUser(data.value)
-      await setToken({ token: data.value.token, refreshToken: data.value.refreshToken })
+      await setToken({ token: data.value.accessToken, refreshToken: data.value.refreshToken })
       await router.push('/')
     } else {
       console.log(data.value.message)
