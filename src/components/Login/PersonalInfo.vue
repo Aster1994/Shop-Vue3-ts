@@ -64,33 +64,35 @@ async function onSetPersonalInfo() {
     />
   </label>
 
-  <div class="mt-6 flex gap-4 w-full">
-    <label class="flex-1 d-input-secondary d-input flex items-center gap-2">
-      <span class="text-accent font-bold text-md whitespace-nowrap">نام</span>
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 w-full">
+    <label class="d-input-secondary d-input flex items-center gap-2">
+      <span class="text-accent font-bold text-xs md:text-md whitespace-nowrap">نام</span>
       <input v-model="personalInfo.firstName" class="d-input-secondary" readonly type="text" />
     </label>
     <label class="flex-1 d-input-secondary d-input flex items-center gap-2">
-      <span class="text-accent font-bold text-md whitespace-nowrap"> نام خانوادگی</span>
+      <span class="text-accent font-bold text-xs md:text-md whitespace-nowrap"> نام خانوادگی</span>
       <input v-model="personalInfo.lastName" class="d-input-secondary" readonly type="text" />
     </label>
   </div>
-  <div class="mt-6 grid grid-cols-4 gap-4 w-full">
-    <button
-      :class="personalInfo.gender === 'male' ? 'bg-accent' : 'bg-base-100'"
-      class="d-btn col-span-1"
-      @click="personalInfo.gender = 'male'"
-    >
-      <span class="text-md font-bold whitespace-nowrap">آقا</span>
-    </button>
-    <button
-      :class="personalInfo.gender === 'female' ? 'bg-accent' : 'bg-base-100'"
-      class="d-btn col-span-1"
-      @click="personalInfo.gender = 'female'"
-    >
-      <span class="text-md font-bold whitespace-nowrap">خانم </span>
-    </button>
-    <label class="d-input-secondary d-input flex items-center gap-2 col-span-2">
-      <span class="text-accent font-bold text-md whitespace-nowrap">ایمیل</span>
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 w-full">
+    <div class="grid grid-cols-2 gap-4">
+      <button
+        :class="personalInfo.gender === 'male' ? 'bg-accent' : 'bg-base-100'"
+        class="d-btn col-span-1"
+        @click="personalInfo.gender = 'male'"
+      >
+        <span class="text-md font-bold whitespace-nowrap">آقا</span>
+      </button>
+      <button
+        :class="personalInfo.gender === 'female' ? 'bg-accent' : 'bg-base-100'"
+        class="d-btn col-span-1"
+        @click="personalInfo.gender = 'female'"
+      >
+        <span class="text-md font-bold whitespace-nowrap">خانم </span>
+      </button>
+    </div>
+    <label class="d-input-secondary d-input flex items-center gap-2">
+      <span class="text-accent font-bold text-xs md:text-md whitespace-nowrap">ایمیل</span>
       <input v-model="personalInfo.firstName" class="d-input-secondary" readonly type="text" />
     </label>
   </div>

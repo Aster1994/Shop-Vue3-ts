@@ -62,7 +62,7 @@ async function onLogin(): Promise<any> {
     if (response.value && response.value.ok) {
       userForm.value = data.value
       await setUser(data.value)
-      await setToken({ token: data.value.token, refreshToken: data.value.refreshToken })
+      await setToken({ token: data.value.accessToken, refreshToken: data.value.refreshToken })
       await router.push('/')
     } else {
       console.log(data.value.message)
@@ -75,9 +75,9 @@ async function onLogin(): Promise<any> {
 </script>
 
 <template>
-  <div class="login--page h-[90vh] flex justify-center">
+  <div class="login--page h-[90vh] flex justify-center p-3">
     <div
-      class="login--page__box my-auto p-6 lg:p-16 w-full lg:w-3/4 h-fit lg:bg-secondary rounded-2xl flex flex-col items-center"
+      class="login--page__box my-auto p-3 md:p-6 lg:p-16 w-full lg:w-3/4 h-fit bg-secondary rounded-2xl flex flex-col items-center"
     >
       <Logo :width="200" class="mb-10" typo />
 

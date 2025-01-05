@@ -7,8 +7,8 @@ function setInitial() {
   const { setToken, getUser } = userStore()
   const userStorage = useStorage('userStorage', ref({}) as Ref<User>)
   const tokensStorage = useStorage('tokensStorage', ref({}) as Ref<Tokens>)
-  if (tokensStorage) setToken(tokensStorage.value)
-  if (userStorage) {
+  if (tokensStorage.value.token) setToken(tokensStorage.value)
+  if (userStorage.value.id) {
     getUser()
   }
 }

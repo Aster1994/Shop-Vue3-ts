@@ -20,7 +20,7 @@ function onSetPhone() {
       class="phone-icon size-6 opacity-50"
       icon="fa-solid fa-mobile-screen-button"
     />
-    <span class="opacity-80 text-md whitespace-nowrap">شماره همراه</span>
+    <span class="opacity-80 text-xs md:text-md whitespace-nowrap">شماره همراه</span>
     <input
       v-model="phoneForm"
       class="d-input-secondary"

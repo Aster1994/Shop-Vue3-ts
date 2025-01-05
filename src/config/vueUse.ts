@@ -1,8 +1,11 @@
 import router from '@/router'
-import { createFetch } from '@vueuse/core'
-import { storeToRefs } from 'pinia'
+import { createFetch, useStorage } from '@vueuse/core'
 import { userStore } from '@/stores/user'
+import { type Ref, ref } from 'vue'
+import type { Tokens } from '@/types/User'
 
+const tokensStorage = useStorage('tokensStorage', ref({}) as Ref<Tokens>)
+const token = tokensStorage.value.token
 // config useFetch from vueUse
 const useMyFetch = createFetch({
   baseUrl: import.meta.env.VITE_API_URL,
@@ -17,8 +20,6 @@ const useMyFetch = createFetch({
         ...options.headers,
         'Content-Type': 'application/json'
       }
-      const { tokens } = storeToRefs(userStore())
-      const token = tokens.value.token
 
       if (token) {
         options.headers = {
@@ -33,7 +34,7 @@ const useMyFetch = createFetch({
       // ctx.data can be null when 5xx response
       if (ctx.data === null) ctx.error = new Error('Error')
       if (ctx.response?.status === 404) router.push('/')
-      else if (ctx.response?.status === 401) {
+      else if (ctx.response?.status === 401 && token) {
         const { getToken, logout } = userStore()
         await getToken()
         logout()
