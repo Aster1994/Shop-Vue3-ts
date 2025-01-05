@@ -17,7 +17,7 @@ function onSetPassword() {
   </p>
   <label class="mt-8 w-full ltr md:w-1/2 d-input-secondary d-input flex items-center gap-2">
     <font-awesome-icon class="password-icon size-5 opacity-50" icon="fa-solid fa-key" />
-    <span class="opacity-80 text-md whitespace-nowrap">رمز</span>
+    <span class="opacity-80 text-xs md:text-md whitespace-nowrap">رمز</span>
     <input v-model="passwordForm" class="d-input-secondary" readonly type="text" />
   </label>
 
