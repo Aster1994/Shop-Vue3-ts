@@ -9,7 +9,7 @@
         :class="{ 'md:col-span-2': banner.title }"
         class="p-8 md:p-16 flex flex-col justify-between items-center md:items-start max-h-full min-h-max w-full"
       >
-        <h3 class="banner-card__title text-4xl md:text-7xl font-bold !leading-tight">
+        <h3 class="banner-card__title font-bold !leading-tight">
           {{ banner.title }}
         </h3>
         <p v-if="banner.text" class="banner-card__text md:text-xl mt-8">{{ banner.text }}</p>
@@ -47,4 +47,11 @@ const props = defineProps<{
 const { banner } = props
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.banner-card__title {
+  font-size: clamp(2rem, 3.5vw, 4.5rem);
+  @supports not (font-size: clamp(2rem, 3.5vw, 4.5rem)) {
+    font-size: 3.5vw;
+  }
+}
+</style>
